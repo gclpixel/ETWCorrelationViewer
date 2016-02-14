@@ -1,0 +1,22 @@
+﻿<Window x:Class="ETWCorrelationViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf"
+        xmlns:local="clr-namespace:ETWCorrelationViewer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="525">
+    <Window.DataContext>
+        <local:DiagramViewModel />
+    </Window.DataContext>
+    <StackPanel>
+        <StackPanel>
+            <Button Click="Button_Click">Create</Button>
+            <Button Click="Modify_Click">Modify</Button>
+        </StackPanel>
+        <!-- The OxyPlot control is binding to a PlotModel in the MainViewModel -->
+        <oxy:PlotView Model="{Binding Model}" x:Name="PlotView1"  Width="500" Height="320"/>
+    </StackPanel>
+
+</Window>
